@@ -1,0 +1,57 @@
+@import "colors";
+
+//Global
+* {
+    color: $font-color;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin button-style {
+    background-color: $button-color;
+    color: $font-color;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 7em;
+    height: 2.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5em 2em;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+}
+
+.container {
+    background-color: $boarder-color;
+    border: 1px solid #000;
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1em;
+    width: 50%;
+
+    .left {
+        background-color: $left-container;
+        height: 100%;
+        width: 69%;
+        position: relative;
+    }
+
+    .right {
+        background-color: $right-container;
+        height: 100%;
+        position: relative;
+        width: 29%;
+        .button {
+            @include button-style;
+        }
+    }
+
+}
